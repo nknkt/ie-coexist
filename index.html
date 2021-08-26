@@ -5,6 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Document</title>
+	<link rel="stylesheet" href="./common/css/main.css">
 	<link rel="stylesheet" href="./css/style.css">
 	<link rel="stylesheet" href="./css/google-code-prettify.css">
 	<!-- Google Code Prettify -->
@@ -13,19 +14,12 @@
 	<script src="common/js/jquery.js"></script>
 	<script src="./common/js/main.js"></script>
 
-	<!-- Picturefill.js -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/picturefill/3.0.3/picturefill.js"></script>
-	<script>
-		document.createElement( "picture" );
-	</script>
-
 	<!-- CSS Variables Polyfill for IE11 -->
 	<script>window.MSInputMethodContext && document.documentMode && document.write('<script src="https://cdn.jsdelivr.net/gh/nuxodin/ie11CustomProperties@4.1.0/ie11CustomProperties.min.js"><\/script>');</script>
 </head>
 <body>
 	<section>
 		<h2>IE hack</h2>
-
 		<div>
 			<code class="prettyprint lang-css">
 				@media screen\0 {
@@ -42,14 +36,27 @@
 				}
 			</code>
 		</div>
-
 	</section>
+
 	<section>
 		<h2>Picturefill.js</h2>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/picturefill/3.0.3/picturefill.js"></script>
+		<script>
+			document.createElement( "picture" );
+		</script>
 		<picture>
 			<source srcset="http://placehold.jp/999999/ffffff/150x100.png" media="(max-width: 736px)"/>
 			<img src="http://placehold.jp/999999/ffffff/320x200.png"><!-- それ以外で表示 -->
 		</picture>
+	</section>
+
+	<section>
+		<h2>object-fit-images</h2>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/object-fit-images/3.2.3/ofi.js"></script>
+		<script>
+			objectFitImages();
+		</script>
+		<p class="object-fit__wrap"><img class="object-fit" src="img/img-01.jpg" alt=""></p>
 	</section>
 </body>
 </html>
